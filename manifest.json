@@ -1,6 +1,6 @@
 {
   "name": "Horloge Bahá'í",
-  "short_name": "Bahá'í Clock",
+  "start_url": "/index.html?v=2",,
   "description": "Horloge avec calendrier bahá'í et heures de soleil - Application spirituelle pour la communauté bahá'íe mondiale",
   "start_url": "/index.html",
   "display": "standalone",
