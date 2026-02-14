@@ -3,21 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#2c3e50">
+    <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Horloge Bahá'í">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    <!-- Manifest pour PWA -->
-    <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
-    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
-    <link rel="shortcut icon" href="/icons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
-    <link rel="manifest" href="/icons/site.webmanifest" />
-    
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>Horloge Bahá'í</title>
     <style>
         * {
@@ -35,27 +23,26 @@
             justify-content: center;
             align-items: center;
             color: #212529;
-            padding: 10px;
-            overflow-x: hidden; /* Empêche le débordement horizontal */
+            padding: 20px;
+            overflow: hidden;
         }
 
         .container {
             background: white;
             backdrop-filter: blur(20px);
-            border-radius: 25px;
-            padding: 25px 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15),
-                        0 5px 15px rgba(0, 0, 0, 0.1);
-            max-width: 100%;
+            border-radius: 35px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12),
+                        0 5px 15px rgba(0, 0, 0, 0.08);
+            max-width: 900px;
             width: 100%;
             border: 1px solid rgba(0, 0, 0, 0.05);
-            overflow: hidden;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
             border-bottom: 1.5px solid rgba(0, 0, 0, 0.06);
             position: relative;
         }
@@ -65,64 +52,62 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
         }
 
         .language-selector {
             background: white;
             border: 1.5px solid rgba(0, 0, 0, 0.1);
-            border-radius: 20px;
-            padding: 6px 14px;
+            border-radius: 25px;
+            padding: 8px 18px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             cursor: pointer;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             font-weight: 600;
-            font-size: 13px;
+            font-size: 14px;
             color: #2c3e50;
             transition: all 0.3s ease;
-            z-index: 10;
         }
 
         .language-selector:hover {
             background: #f8f9fa;
             transform: translateY(-1px);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
         }
 
         .language-selector::after {
             content: '▼';
-            font-size: 7px;
+            font-size: 8px;
             opacity: 0.6;
         }
 
         .language-dropdown {
             position: absolute;
-            top: 40px;
+            top: 45px;
             left: 50%;
             transform: translateX(-50%);
             background: white;
-            border-radius: 12px;
+            border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-            padding: 6px 0;
-            min-width: 140px;
+            padding: 8px 0;
+            min-width: 160px;
             display: none;
             flex-direction: column;
-            gap: 3px;
+            gap: 4px;
             z-index: 101;
             border: 1.5px solid rgba(0, 0, 0, 0.1);
         }
 
         .language-option {
-            padding: 8px 12px;
+            padding: 10px 15px;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 13px;
+            gap: 12px;
+            font-size: 14px;
             font-weight: 500;
             color: #495057;
             transition: all 0.2s ease;
@@ -140,8 +125,8 @@
         }
 
         .language-flag {
-            font-size: 16px;
-            width: 22px;
+            font-size: 18px;
+            width: 24px;
             text-align: center;
         }
 
@@ -149,9 +134,9 @@
         .bahai-star-container {
             display: inline-block;
             vertical-align: middle;
-            margin-left: 10px;
-            width: 38px;
-            height: 38px;
+            margin-left: 15px;
+            width: 45px;
+            height: 45px;
         }
 
         .bahai-star-svg {
@@ -161,11 +146,11 @@
         }
 
         .header h1 {
-            font-size: 26px;
+            font-size: 34px;
             font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             color: #2c3e50;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             position: relative;
             z-index: 2;
             display: inline-block;
@@ -173,122 +158,121 @@
         }
 
         .header .subtitle {
-            font-size: 14px;
+            font-size: 16px;
             opacity: 0.7;
             font-weight: 400;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
             color: #6c757d;
         }
 
         /* Bannières des jours saints */
         .holy-days-banner {
             display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 12px;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 15px;
             flex-wrap: wrap;
         }
 
         .holy-day-item {
             background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 10px 14px;
-            border-radius: 14px;
-            font-size: 11px;
+            padding: 12px 18px;
+            border-radius: 16px;
+            font-size: 13px;
             font-weight: 500;
             border: 1.5px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-            min-width: 150px;
-            max-width: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            max-width: 45%;
+            min-width: 200px;
         }
 
         .holy-day-left {
-            border-left: 3px solid #f72585;
+            border-left: 4px solid #f72585;
             color: #b5179e;
         }
 
         .holy-day-right {
-            border-right: 3px solid #4361ee;
+            border-right: 4px solid #4361ee;
             color: #3a56d4;
             text-align: right;
         }
 
         .holy-day-title {
             font-weight: 600;
-            margin-bottom: 3px;
-            font-size: 12px;
+            margin-bottom: 4px;
+            font-size: 14px;
         }
 
         .main-content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 20px;
-            width: 100%;
+            gap: 30px;
         }
 
         .dates-row {
             display: flex;
-            flex-direction: column; /* Mobile-first: colonne */
-            justify-content: center;
+            justify-content: space-between;
             width: 100%;
             align-items: stretch;
-            gap: 15px;
+            gap: 20px;
         }
 
         .date-card {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            gap: 12px;
-            width: 100%;
+            gap: 15px;
+            flex: 1;
+            min-width: 200px;
         }
 
         .gregorian-date, .bahai-date {
             background: #f8f9fa;
-            padding: 16px 20px;
-            border-radius: 18px;
+            padding: 20px 25px;
+            border-radius: 22px;
             text-align: center;
             transition: all 0.3s ease;
             border: 1.5px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
         }
 
         .gregorian-date:hover, .bahai-date:hover {
             background: #f1f3f5;
             transform: translateY(-2px);
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
         }
 
         .gregorian-date {
-            border-left: 3px solid #4361ee;
+            border-left: 4px solid #4361ee;
         }
 
         .bahai-date {
-            border-right: 3px solid #f72585;
+            border-right: 4px solid #f72585;
         }
 
         .date-label {
-            font-size: 11px;
+            font-size: 13px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             opacity: 0.6;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             font-weight: 600;
             color: #495057;
         }
 
         .date-value {
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 500;
-            line-height: 1.4;
+            line-height: 1.5;
             color: #212529;
         }
 
         .clock-container {
             position: relative;
-            width: 240px; /* Réduit pour mobile */
-            height: 240px; /* Réduit pour mobile */
-            margin: 15px auto;
+            width: 320px;
+            height: 320px;
+            margin: 0 auto;
         }
 
         .clock-face {
@@ -297,9 +281,9 @@
             border-radius: 50%;
             background: linear-gradient(145deg, #ffffff, #f8f9fa);
             position: relative;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1),
-                        inset 0 0 15px rgba(0, 0, 0, 0.03);
-            border: 10px solid #e9ecef;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08),
+                        inset 0 0 20px rgba(0, 0, 0, 0.03);
+            border: 12px solid #e9ecef;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -319,13 +303,13 @@
 
         .clock-center {
             position: absolute;
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
             background: #2c3e50;
             border-radius: 50%;
             z-index: 10;
-            border: 2px solid white;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border: 3px solid white;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
         }
 
         .hour-marks {
@@ -344,22 +328,22 @@
         }
 
         .hour-mark div {
-            width: 1.2px;
-            height: 6px;
+            width: 1.5px;
+            height: 8px;
             background: rgba(0, 0, 0, 0.15);
-            margin-top: 22px;
+            margin-top: 28px;
             border-radius: 2px;
         }
 
         .hour-mark:nth-child(5n+1) div {
-            height: 14px;
-            width: 2px;
+            height: 18px;
+            width: 2.5px;
             background: rgba(0, 0, 0, 0.35);
         }
 
         .hour-mark:nth-child(1) div {
-            height: 18px;
-            width: 2.5px;
+            height: 22px;
+            width: 3px;
             background: #4361ee;
         }
 
@@ -368,13 +352,13 @@
             bottom: 50%;
             left: 50%;
             transform-origin: bottom;
-            width: 5px;
-            height: 70px;
+            width: 6px;
+            height: 90px;
             background: linear-gradient(to top, #f72585, #b5179e);
-            margin-left: -2.5px;
-            border-radius: 2.5px 2.5px 2px 2px;
+            margin-left: -3px;
+            border-radius: 3px 3px 2px 2px;
             z-index: 6;
-            box-shadow: 0 0 6px rgba(247, 37, 133, 0.4);
+            box-shadow: 0 0 8px rgba(247, 37, 133, 0.4);
             transform: rotate(0deg);
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -384,49 +368,49 @@
             bottom: 50%;
             left: 50%;
             transform-origin: bottom;
-            width: 2.5px;
-            height: 100px;
+            width: 3px;
+            height: 130px;
             background: linear-gradient(to top, #4361ee, #4895ef);
-            margin-left: -1.25px;
-            border-radius: 1.25px 1.25px 1px 1px;
+            margin-left: -1.5px;
+            border-radius: 1.5px 1.5px 1px 1px;
             z-index: 5;
-            box-shadow: 0 0 6px rgba(67, 97, 238, 0.3);
+            box-shadow: 0 0 8px rgba(67, 97, 238, 0.3);
             transform: rotate(0deg);
             transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .sun-info {
             background: #f8f9fa;
-            padding: 12px 16px;
-            border-radius: 16px;
+            padding: 14px 20px;
+            border-radius: 18px;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 5px;
+            gap: 6px;
             transition: all 0.3s ease;
             border: 1.5px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
             height: 100%;
         }
 
         .sun-info:hover {
             background: #f1f3f5;
             transform: translateY(-2px);
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
         }
 
         .sunrise {
-            border-left: 3px solid #ffb703;
+            border-left: 4px solid #ffb703;
         }
 
         .sunset {
-            border-right: 3px solid #4cc9f0;
+            border-right: 4px solid #4cc9f0;
         }
 
         .sun-icon {
-            font-size: 22px;
+            font-size: 26px;
             font-weight: bold;
         }
 
@@ -439,78 +423,98 @@
         }
 
         .sun-label {
-            font-size: 11px;
+            font-size: 12px;
             opacity: 0.7;
             font-weight: 500;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
             color: #495057;
         }
 
         .sun-time {
-            font-size: 16px;
+            font-size: 19px;
             font-weight: 600;
             color: #212529;
         }
 
         .location {
-            margin-top: 12px;
-            font-size: 13px;
+            margin-top: 15px;
+            font-size: 14px;
             opacity: 0.75;
             text-align: center;
             font-weight: 500;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.5px;
             color: #495057;
-            min-height: 22px;
+            min-height: 24px;
         }
 
         .precision-indicator {
-            margin-top: 6px;
-            font-size: 10px;
+            margin-top: 8px;
+            font-size: 11px;
             text-align: center;
             color: #2ecc71;
             font-weight: 600;
         }
 
-        /* Tablettes et grands mobiles */
-        @media (min-width: 481px) {
-            .dates-row {
-                flex-direction: row; /* Repasse en ligne pour les tablettes+ */
-            }
-            
-            .clock-container {
-                width: 280px;
-                height: 280px;
-            }
-            
-            .header h1 {
-                font-size: 30px;
-            }
-        }
-
-        /* Ordinateurs */
-        @media (min-width: 768px) {
-            body {
-                padding: 20px;
-            }
-            
+        @media (max-width: 480px) {
             .container {
-                border-radius: 35px;
-                padding: 40px 30px;
+                padding: 30px 20px;
+                border-radius: 25px;
             }
-            
-            .clock-container {
-                width: 320px;
-                height: 320px;
-            }
-            
+
             .header h1 {
-                font-size: 34px;
+                font-size: 28px;
             }
-            
+
             .bahai-star-container {
-                width: 45px;
-                height: 45px;
-                margin-left: 15px;
+                width: 38px;
+                height: 38px;
+                margin-left: 10px;
+            }
+
+            .language-selector {
+                padding: 6px 14px;
+                font-size: 13px;
+            }
+
+            .holy-day-item {
+                max-width: 100%;
+                min-width: auto;
+                text-align: center;
+                border-left: 4px solid #f72585 !important;
+                border-right: 4px solid #4361ee !important;
+            }
+
+            .holy-day-right {
+                text-align: center;
+            }
+
+            .clock-container {
+                width: 260px;
+                height: 260px;
+            }
+
+            .clock-face {
+                border-width: 9px;
+            }
+
+            .date-value {
+                font-size: 18px;
+            }
+
+            .sun-time {
+                font-size: 17px;
+            }
+
+            .hour-hand {
+                height: 72px;
+                width: 5px;
+                margin-left: -2.5px;
+            }
+
+            .minute-hand {
+                height: 105px;
+                width: 2.5px;
+                margin-left: -1.25px;
             }
         }
 
@@ -535,62 +539,34 @@
 
         html[dir="rtl"] .holy-day-left {
             border-left: none;
-            border-right: 3px solid #f72585;
+            border-right: 4px solid #f72585;
             text-align: right;
         }
 
         html[dir="rtl"] .holy-day-right {
             border-right: none;
-            border-left: 3px solid #4361ee;
+            border-left: 4px solid #4361ee;
             text-align: left;
         }
 
         html[dir="rtl"] .gregorian-date {
             border-left: none;
-            border-right: 3px solid #4361ee;
+            border-right: 4px solid #4361ee;
         }
 
         html[dir="rtl"] .bahai-date {
             border-right: none;
-            border-left: 3px solid #f72585;
+            border-left: 4px solid #f72585;
         }
 
         html[dir="rtl"] .sunrise {
             border-left: none;
-            border-right: 3px solid #ffb703;
+            border-right: 4px solid #ffb703;
         }
 
         html[dir="rtl"] .sunset {
             border-right: none;
-            border-left: 3px solid #4cc9f0;
-        }
-
-        /* Bouton d'installation PWA */
-        #installBtn {
-            display: none;
-            position: fixed;
-            bottom: 15px;
-            right: 15px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #4CAF50, #45a049);
-            color: white;
-            border: none;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            box-shadow: 0 3px 10px rgba(76, 175, 80, 0.4);
-            z-index: 1000;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        #installBtn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 14px rgba(76, 175, 80, 0.5);
-        }
-
-        #installBtn:active {
-            transform: translateY(0);
+            border-left: 4px solid #4cc9f0;
         }
     </style>
 </head>
@@ -614,13 +590,13 @@
                 🕐 Horloge Bahá'í
                 <!-- Étoile bahá'íe à 9 branches agrandie et alignée -->
                 <div class="bahai-star-container">
-                  <svg class="bahai-star-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Étoile bahá'íe authentique à 9 branches -->
-                      <path d="M50,5 L56,25 L75,18 L70,38 L92,42 L72,52 L88,70 L65,68 L68,90 L50,75 L32,90 L35,68 L12,70 L28,52 L8,42 L30,38 L25,18 L44,25 Z"
-                      fill="#d4af37" 
-                      stroke="#b8860b" 
-                      stroke-width="2.8"/>
-                 </svg>
+                   <svg class="bahai-star-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                           <!-- Étoile bahá'íe authentique à 9 branches -->
+                           <path d="M50,5 L56,25 L75,18 L70,38 L92,42 L72,52 L88,70 L65,68 L68,90 L50,75 L32,90 L35,68 L12,70 L28,52 L8,42 L30,38 L25,18 L44,25 Z" 
+                           fill="#d4af37" 
+                           stroke="#b8860b" 
+                           stroke-width="2.8"/>
+                    </svg>
                 </div>
             </h1>
             <div class="subtitle" id="subtitle">Temps et Calendrier Spirituel</div>
@@ -669,9 +645,6 @@
             <div class="precision-indicator" id="precisionIndicator">✅ Données précises</div>
         </div>
     </div>
-
-    <!-- Bouton d'installation PWA -->
-    <button id="installBtn">📲 Installer l'application</button>
 
     <script>
         // ========== SYSTÈME DE TRADUCTION MULTILINGUE ==========
@@ -809,24 +782,6 @@
             }
         };
 
-        // ========== TRADUCTIONS DES MOIS ET JOURS BAHÁ'ÍS ==========
-
-        const BAHAI_MONTHS = {
-            fr: ['Bahá', 'Jalál', 'Jamál', '‘Aẓamat', 'Núr', 'Raḥmat', 'Kalimát', 'Kamál', 'Asmá’', '‘Izzat', 'Mashíyyat', '‘Ilm', 'Qudrat', 'Qawl', 'Masá’il', 'Sharaf', 'Sulṭán', 'Mulk', '‘Alá’'],
-            en: ['Bahá', 'Jalál', 'Jamál', '‘Aẓamat', 'Núr', 'Raḥmat', 'Kalimát', 'Kamál', 'Asmá’', '‘Izzat', 'Mashíyyat', '‘Ilm', 'Qudrat', 'Qawl', 'Masá’il', 'Sharaf', 'Sulṭán', 'Mulk', '‘Alá’'],
-            es: ['Bahá', 'Jalál', 'Jamál', '‘Aẓamat', 'Núr', 'Raḥmat', 'Kalimát', 'Kamál', 'Asmá’', '‘Izzat', 'Mashíyyat', '‘Ilm', 'Qudrat', 'Qawl', 'Masá’il', 'Sharaf', 'Sulṭán', 'Mulk', '‘Alá’'],
-            ar: ['بهاء', 'جلال', 'جمال', 'عظمة', 'نور', 'رحمة', 'كلمات', 'كمال', 'اسماء', 'عزت', 'مشية', 'علم', 'قدرة', 'قول', 'مسائل', 'شرف', 'سلطان', 'ملك', 'علاء'],
-            fa: ['بهاء', 'جلال', 'جمال', 'عظمة', 'نور', 'رحمت', 'کلمات', 'کمال', 'اسماء', 'عزت', 'مشیت', 'علم', 'قدرت', 'قول', 'مسائل', 'شرف', 'سلطان', 'ملک', 'علاء']
-        };
-
-        const BAHAI_DAYS = {
-            fr: ['Bahá', 'Jalál', 'Jamál', '‘Aẓamat', 'Núr', 'Raḥmat', 'Kalimát', 'Kamál', 'Asmá’', '‘Izzat', 'Mashíyyat', '‘Ilm', 'Qudrat', 'Qawl', 'Masá’il', 'Sharaf', 'Sulṭán', 'Mulk', '‘Alá’'],
-            en: ['Bahá', 'Jalál', 'Jamál', '‘Aẓamat', 'Núr', 'Raḥmat', 'Kalimát', 'Kamál', 'Asmá’', '‘Izzat', 'Mashíyyat', '‘Ilm', 'Qudrat', 'Qawl', 'Masá’il', 'Sharaf', 'Sulṭán', 'Mulk', '‘Alá’'],
-            es: ['Bahá', 'Jalál', 'Jamál', '‘Aẓamat', 'Núr', 'Raḥmat', 'Kalimát', 'Kamál', 'Asmá’', '‘Izzat', 'Mashíyyat', '‘Ilm', 'Qudrat', 'Qawl', 'Masá’il', 'Sharaf', 'Sulṭán', 'Mulk', '‘Alá’'],
-            ar: ['بهاء', 'جلال', 'جمال', 'عظمة', 'نور', 'رحمة', 'كلمات', 'كمال', 'اسماء', 'عزت', 'مشية', 'علم', 'قدرة', 'قول', 'مسائل', 'شرف', 'سلطان', 'ملك', 'علاء'],
-            fa: ['بهاء', 'جلال', 'جمال', 'عظمة', 'نور', 'رحمت', 'کلمات', 'کمال', 'اسماء', 'عزت', 'مشیت', 'علم', 'قدرت', 'قول', 'مسائل', 'شرف', 'سلطان', 'ملک', 'علاء']
-        };
-
         // Détection automatique de la langue
         function detectLanguage() {
             const savedLang = localStorage.getItem('bahaiClockLang');
@@ -919,9 +874,9 @@
             
             // Format selon la langue
             const options = { 
-                weekday: 'short', 
+                weekday: 'long', 
                 day: 'numeric', 
-                month: 'short', 
+                month: 'long', 
                 year: 'numeric' 
             };
             
@@ -947,7 +902,19 @@
             document.getElementById('gregorianDate').textContent = formattedDate;
         }
 
-        // 3. CALENDRIER BAHÁ'Í PRÉCIS AVEC TRADUCTION
+        // 3. CALENDRIER BAHÁ'Í PRÉCIS
+        const BAHAI_MONTHS = [
+            'Bahá', 'Jalál', 'Jamál', '‘Aẓamat', 'Núr', 'Raḥmat', 'Kalimát',
+            'Kamál', 'Asmá’', '‘Izzat', 'Mashíyyat', '‘Ilm', 'Qudrat', 'Qawl',
+            'Masá’il', 'Sharaf', 'Sulṭán', 'Mulk', '‘Alá’'
+        ];
+
+        const BAHAI_DAYS = [
+            'Bahá', 'Jalál', 'Jamál', '‘Aẓamat', 'Núr', 'Raḥmat', 'Kalimát',
+            'Kamál', 'Asmá’', '‘Izzat', 'Mashíyyat', '‘Ilm', 'Qudrat', 'Qawl',
+            'Masá’il', 'Sharaf', 'Sulṭán', 'Mulk', '‘Alá’'
+        ];
+
         function isLeapYear(year) {
             return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
         }
@@ -997,7 +964,7 @@
                 year: bahaiYear,
                 month: bahaiMonth,
                 day: bahaiDay,
-                dayName: BAHAI_DAYS[currentLang][(diffDays - 1) % 19],
+                dayName: BAHAI_DAYS[(diffDays - 1) % 19],
                 totalDays: diffDays,
                 nawRuzYear: nawRuzYear
             };
@@ -1007,29 +974,14 @@
             const now = new Date();
             const bahai = gregorianToBahai(now);
             
-            const t = translations[currentLang];
-            const months = BAHAI_MONTHS[currentLang];
-            
             let dateText;
             
             if (bahai.month === 0) {
                 // Ayyám-i-Há
-                if (currentLang === 'ar' || currentLang === 'fa') {
-                    // RTL : يوم، عدد أيام الهاء سنة
-                    dateText = `${bahai.dayName}، ${bahai.day} أيام الهاء ${bahai.year}`;
-                } else {
-                    // LTR : DayName, day Ayyám-i-Há year
-                    dateText = `${bahai.dayName}, ${bahai.day} Ayyám-i-Há ${bahai.year}`;
-                }
+                dateText = `${bahai.dayName}, ${bahai.day} Ayyám-i-Há ${bahai.year}`;
             } else {
-                const monthName = months[bahai.month - 1];
-                if (currentLang === 'ar' || currentLang === 'fa') {
-                    // RTL : يوم، عدد شهر سنة
-                    dateText = `${bahai.dayName}، ${bahai.day} ${monthName} ${bahai.year}`;
-                } else {
-                    // LTR : DayName, day MonthName year
-                    dateText = `${bahai.dayName}, ${bahai.day} ${monthName} ${bahai.year}`;
-                }
+                const monthName = BAHAI_MONTHS[bahai.month - 1];
+                dateText = `${bahai.dayName}, ${bahai.day} ${monthName} ${bahai.year}`;
             }
             
             document.getElementById('bahaiDate').textContent = dateText;
@@ -1323,45 +1275,6 @@
             // Fermer le dropdown au clic ailleurs
             document.addEventListener('click', () => {
                 dropdown.style.display = 'none';
-            });
-        }
-
-        // ========== FONCTION PWA - INSTALLATION ==========
-
-        let deferredPrompt;
-
-        // Écouter l'événement beforeinstallprompt
-        window.addEventListener('beforeinstallprompt', (e) => {
-            console.log('PWA: Installation disponible');
-            e.preventDefault();
-            deferredPrompt = e;
-            document.getElementById('installBtn').style.display = 'block';
-        });
-
-        // Gérer le clic sur le bouton
-        document.getElementById('installBtn').addEventListener('click', async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const { outcome } = await deferredPrompt.userChoice;
-                console.log(`PWA: Résultat de l'installation: ${outcome}`);
-                deferredPrompt = null;
-                document.getElementById('installBtn').style.display = 'none';
-            }
-        });
-
-        // Vérifier si l'app est déjà installée
-        window.addEventListener('appinstalled', () => {
-            console.log('PWA: Application installée avec succès');
-            document.getElementById('installBtn').style.display = 'none';
-        });
-
-        // ========== ENREGISTRER LE SERVICE WORKER ==========
-
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js')
-                    .then(reg => console.log('Service Worker enregistré', reg.scope))
-                    .catch(err => console.log('Erreur Service Worker', err));
             });
         }
 
